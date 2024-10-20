@@ -1,0 +1,382 @@
+\documentclass[lang=en,12pt,twoside]{textbook}
+% ----------------------------- Math Font ------------------------------------- %
+\usepackage[T1]{fontenc}
+\usepackage{newtx,anyfontsize}
+\DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}
+\let\sum\relax
+\let\prod\relax
+\DeclareMathSymbol{\sum}{\mathop}{CMlargesymbols}{"50}
+\DeclareMathSymbol{\prod}{\mathop}{CMlargesymbols}{"51}
+%% \infty
+\DeclareSymbolFont{symbolsCM}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{symbolsCM}{bold}{OMS}{cmsy}{b}{n}
+\let\txinfty\infty
+\DeclareMathSymbol{\infty}{\mathord}{symbolsCM}{"31}
+\definecolor{nuanbai}{HTML}{f5f5f5}
+\pagecolor{lightgray!6}
+% ---------------------------------------------------------------------------- %
+% \overfullrule=5pt
+% \showboxdepth=\maxdimen
+% \showboxbreadth=\maxdimen
+\tracingonline=1
+\tracingoutput=1
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	标题页信息
+%----------------------------------------------------------------------------------------
+\title{Reading Paper}
+\subtitle{\textit{Notes for Demailly's books and papers}}
+\author{Ethan Lu}
+\date{\today}
+\publishers{Textbook}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	插入自定义标题页
+%----------------------------------------------------------------------------------------
+\begin{titlepage} % 创建一个新的页面
+%用来将图片从左下角开始平铺整个封面
+	\AddToShipoutPicture*{%
+	\AtPageLowerLeft{%
+		\adjustbox{width=1.1\paperwidth, height=1.5\paperheight, keepaspectratio}{% 强制图片至纸张尺寸，但可能裁切
+			\includegraphics{images/pexels-photo-3378916.jpeg}
+		}
+	}
+}
+\begin{flushleft} % 左对齐环境
+	\setlength{\leftskip}{1cm} % 左侧缩进
+	\makeatletter % 允许访问带有@字符的内部命令
+	% \vspace*{4cm} % 标题距离页面顶端的空白
+	% {\color{white}\Huge \textbf{\@title} \par} % 使用前文定义的title作为标题
+	% \vspace{1cm} % 标题和子标题的间距
+	% {\color{white}\Large \@subtitle \par} % 使用前文定义的subtitle作为子标题
+	% \vfill % 作者信息前的垂直填充
+	% {\color{white}\large \@author \par} % 作者名
+	% {\color{white}\large \@publishers \par} % 出版者
+	% {\color{white}\large \today\par} % 日期，默认为当天
+        \begin{tikzpicture}[overlay,remember picture]
+        \begin{pgfonlayer}{bottom}
+            \fill[dblue!10,opacity=0.1] (current page.south west) rectangle ++(\paperwidth,2cm);
+            \node[inner sep=0pt,text=white,font=\large\sffamily,above] (bottominfo) at ([yshift=.7cm]current page.south) {
+                \@author\hspace{4cm}\@publishers\hspace{4cm}\today
+            };
+        \end{pgfonlayer}
+        \fill[color=black!50,opacity=.2]node[append after command={
+            ([yshift=0.5cm]bookinfo.north west) rectangle ([yshift=-0.5cm]bookinfo.south east)},minimum width=\paperwidth,opacity=1,align=left,inner sep=0pt,anchor=west] (bookinfo) at ([shift={(0,4cm)}]current page.west) {\hspace{-7cm}
+                \begin{varwidth}{\linewidth}
+                    \setlength\baselineskip{3ex}
+                    \textcolor{black!10!white}{\Huge \textbf{\@title}} \\[.6cm]
+                    \textcolor{black!10!white}{\Large \@subtitle}
+                \end{varwidth}
+                };
+    \end{tikzpicture}
+	\makeatother % 将@重置为非字母字符
+	\vspace{0cm} % 标题和子标题的间距
+	% 结束左对齐环境
+\end{flushleft}
+\ClearShipoutPicture % 清除背景图片
+\end{titlepage}
+% --------------------------------- 主要内容写在下面 --------------------------------- %
+\pagestyle{Mainpage} % 页面样式
+\chapimg{images/pexels-photo-1452701.jpeg}
+
+\begin{titlepage}
+    \newgeometry{left=2cm,right=2cm,top=2.5cm,bottom=2.2cm}
+    \tableofcontents
+    \restoregeometry
+\end{titlepage}
+
+% ---------------------------------------------------------------------------- %
+
+\partimg{images/pexels-photo-931018.jpeg}
+\part{Proof of Opennes Conjecture}
+
+
+\chapter{Notes for the Proof of Openness Conjecture}
+
+\section{Organizing the proof strategy}
+\subsection{The case \texorpdfstring{$1$}{}}
+
+\begin{lemma}[Lemma 2.3 (see [8]; see also [22]).]\label{lem:2.3}
+     Let $F \in \mathcal{O}_n$ and $g_1, \ldots, g_s \in \mathcal{O}_n$ be germs of holomorphic functions vanishing at the origin $o \in \mathbb{C}^n$. Assume that for any given neighborhood of $o,|F| \leq C\left|\left(g_1, \ldots, g_s\right)\right|$ does not hold for any constant $C$. Then there exists a germ of an analytic curve $\gamma$ through o, satisfying $\gamma \cap\{F=0\} \subseteq\{o\}$, such that $\left.\frac{g_i}{F}\right|_\gamma$ is holomorphic on $\gamma \backslash o$ with \ref{thm:1.1} for any $i \in\{1, \ldots, s\}$, where $\frac{\widetilde{g_i}}{F}$ is the holomorphic extension of $\frac{g_i}{F}$ from $\gamma \backslash o$ to $\gamma$.
+\end{lemma}
+
+\begin{theorem}[cf \cite{guan2015proof}]\label{thm:1.1}
+    Let $\varphi$ be a negative plurisubharmonic function on the unit polydisc
+    $\Delta^n \in \mathbb{C}^n$. Suppose $F$ is a holomorphic function on
+    $\Delta^n$, which satisfies
+    \[ \int_{\Delta^n} | F |^2 e^{- \varphi} d \lambda_n < + \infty, \]
+    where $d \lambda_n$ is the Lebesgue measure on $\mathbb{C}^n$. Then for some
+$r \in (0, 1)$, there exists a number $p > 1$ such that
+\[ \int_{\Delta^n_r} | F |^2 e^{- p \varphi} d \lambda_n < + \infty . \]
+\end{theorem}
+
+\begin{proof}
+As
+\[ \int_{\Delta' \times \Delta''} | F_j |^2 e^{- p_j \varphi} d \lambda_n
+    \leqslant C \int_{H_j} | F |^2 e^{- p_j \varphi} d \lambda_{n - 1} \]
+and we already known that\sidenote{see (3.7) in original paper.}
+\[ \int_{H_j} | F |^2 e^{- p_j \varphi} d \lambda_{n - 1} \leqslant 2\int_{H_j}
+    | F |^2 e^{- \varphi} d \lambda_{n - 1} = o \left( \frac{1}{| a_j  |^2}
+    \right), \]
+thus we have
+\begin{align*}
+\int_{\Delta' \times \Delta''} | F_j |^2 e^{- p_j \varphi} d \lambda_n &
+\leqslant  C \int_{H_j} | F |^2 e^{- p_j \varphi} d \lambda_{n - 1}\\
+& \leqslant  C \int_{H_j} | F |^2 e^{- \varphi} d \lambda_{n - 1} = o
+\left( \frac{1}{| a_j  |^2} \right) .
+\end{align*}
+Then by $F_j |_{H_j} = F |_{H_j}$ and negativeness of $\varphi$, we have
+\[ \int_{\Delta' \times \Delta''} | F_j |^2 d \lambda_n \leqslant
+    \int_{\Delta' \times \Delta''} | F_j |^2 e^{- p_j \varphi} d \lambda_n = o
+    \left( \frac{1}{| a_j  |^2} \right), \]
+which is to say
+\[ \int_{\Delta' \times \Delta''} | F_j |^2 d \lambda_n = o \left( \frac{1}{|
+    a_j  |^2} \right) . \]
+\tikz\draw[line width=0.5pt,dashed,myblue] (0,0)--++(.95\linewidth,0);\newline
+We choose $r_0$ small enough such that\sidenote{The reason is that from the assumption of theorem \ref{thm:1.1}, we have known that
+$F$ is a holomorphic function on $\Delta^n$, which satisfies
+\[ \int_{\Delta^n} | F |^2 e^{- \varphi} d \lambda_n < + \infty, \]
+thus we can find a small enough $r_0$ such that
+\[ \int_{\Delta_{r_0}} | F |^2 e^{- \varphi} d \lambda_1 < + \infty . \]}
+\[ \int_{\Delta_{r_0}} | F |^2 e^{- \varphi} d \lambda_1 < + \infty . \]
+
+
+% \softclearmargin
+\textit{Step 1: Theorem \ref{thm:1.1} for the dimension one case.}
+We first prove Theorem \ref{thm:1.1} for the dimension one case, which is elementary but instructive. Our proof for the general dimension case is quite similar. Actually the proofs for both cases are parallel.
+
+We choose $r_0$ small enough such that $\int_{\Delta_{r_0}}|F|^2 e^{-\varphi} d \lambda_1<+\infty$\sidenote{It has already been explained above.}. Then there exist complex numbers $a_j \rightarrow 0 \; (j \rightarrow+\infty)$ such that
+$$
+\left|F\left(a_j\right)\right|^2 e^{-\varphi\left(a_j\right)}=o\left(\frac{1}{\left|a_j\right|^2}\right) .
+$$
+
+As $\left|F\left(a_j\right)\right|^2 e^{-\varphi\left(a_j\right)}<+\infty$, then one can find $p_j>1$ small enough such that\sidenote{As \begin{align*}
+    &\phantom{=}e^{- p_j \varphi (a_j)} \\
+    &= [e^{- \varphi (a_j)}]^{p_j} \\ &= e^{- \varphi (a_j)}
+       \cdot [e^{- \varphi (a_j)}]^{p_j - 1},
+\end{align*}
+$p_j > 1$ ($p_j - 1 > 0$) and the negativeness of $\varphi$ ($-
+\varphi > 0$), there exists $p_j$ small enough such that $p_j - 1 \leqslant
+\ln 2$, thus we have
+\[ [e^{- \varphi (a_j)}]^{p_j - 1} \leqslant e^{p_j - 1} \leqslant 2. \]}
+
+\begin{equation}\label{eq:3.1}
+    \left|F\left(a_j\right)\right|^2 e^{-p_j \varphi\left(a_j\right)} \leq 2\left|F\left(a_j\right)\right|^2 e^{-\varphi\left(a_j\right)}=o\left(\frac{1}{\left|a_j\right|^2}\right) .
+\end{equation}
+
+
+Using movable (respect to $a_j$ ) the Ohsawa-Takegoshi $L^2$ extension theorem on $\Delta$, we obtain holomorphic functions $F_j$ on $\Delta$ such that $\left.F_j\right|_{a_j}=F\left(a_j\right)$ and\sidenote{This is because $| F (a_j) |^2\cdot$ $ e^{- p_j (a_j)}$ is a constant.}
+\begin{equation}\label{eq:3.2}
+    \int_{\Delta}\left|F_j\right|^2 e^{-p_j \varphi} d \lambda_1 \leq \mathbf{C}\left|F\left(a_j\right)\right|^2 e^{-p_j \varphi\left(a_j\right)},
+\end{equation}
+where $\mathbf{C}$ is a universal constant.
+
+By inequality \eqref{eq:3.1} and negativeness of $\varphi$, we obtain that
+\begin{equation}\label{eq:3.3}
+    \int_{\Delta}\left|F_j\right|^2 d \lambda_1=o\left(\frac{1}{\left|a_j\right|^2}\right) .
+\end{equation}
+
+By contradiction, assume that Theorem \ref{thm:1.1} does not hold for $n=1$; that is to say, $\int_{\Delta_r}|F|^2 e^{-p_j \varphi} d \lambda=+\infty$ for any $r>0$ and any $j \in\{1,2, \ldots\}$.
+
+\textbf{Assertion.} Since $\{F=0\} \cap \Delta_{r_0} \subseteq\{o\}$, then it follows from inequality \eqref{eq:3.2} that one can derive that \emph{$F / F_j$ is unbounded}. Otherwise, the boundedness would imply the finiteness of the integral of $|F|^2 e^{-p_j \varphi}$, according to inequality \eqref{eq:3.2}. This contradicts the assumption. Then there exists a holomorphic function $h_j$ on $\Delta_{r_0}$ satisfying
+\begin{enumerate}[label=(\arabic*)]
+    \item $\left.F_j\right|_{\Delta_{r_0}}=\left.F\right|_{\Delta_{r_0}} h_j$,
+    \item $h_j(o)=0$,
+    \item $h_j\left(a_j\right)=1$.
+\end{enumerate}
+According to Lemma 2.1\sidenote{Let $f \not \equiv 0$ be a holomorphic function on the disc $\Delta_r$ of radius $r$ containing the origin o in $\mathbb{C}$. Let $h_a$ be a holomorphic function on $\Delta_r$, which satisfies $h_a(o)=0$ and $h_a(b)=1$ for any $b^k=a$ ( $k$ is a positive integer), where $a \in \Delta_r$ whose norm is small enough. Then we have
+$$
+\int_{\Delta_r}|f|^2\left|h_a\right|^2 d \lambda_1>C_1|a|^{-2}
+$$
+where $C_1$ is a positive constant independent of a and $h_a$.}, it follows that
+$$
+\frac{C_1}{\left|a_j\right|^2} \leq \int_{\Delta_{r_0}}\left|F_j\right|^2 d \lambda_1,
+$$
+which contradicts equality \eqref{eq:3.3}, where $C_1>0$ is independent of $j$.
+We have thus proved Theorem \ref{thm:1.1} for $n=1$.
+
+\textit{Step 2: Theorem \ref{thm:1.1} for $n$.} By induction on the dimension $n$, one may assume that Theorem \ref{thm:1.1} holds for $n-1$.
+
+We prove Theorem \ref{thm:1.1} for the general dimension $n$ by contradiction. Assume that Theorem \ref{thm:1.1} for $n$ is not true, therefore, for some negative psh function $\varphi$, there exists a holomorphic function $F$ such that
+\begin{equation}\label{eq:3.4}
+    \int_{\Delta_{r_0}^n}|F|^2 e^{-\varphi} d \lambda_n<+\infty,
+\end{equation}
+for some $r_0>0$, and
+\begin{equation}\label{eq:3.5}
+    \int_{\Delta_r^n}|F|^2 e^{-p \varphi} d \lambda_n=+\infty,
+\end{equation}
+for any $r \in\left(0, r_0\right)$ and $p>1$. That is to say, the germ of the holomorphic function $F$ is in $\mathcal{I}(\varphi)_o$ but not in $\mathcal{I}_{+}(\varphi)_o$.
+
+By Lemma 2.4\sidenote{Assume that $F \in \mathcal{O}_n$ is a holomorphic function on some neighborhood $V$ of $o$ that is not a germ of $$\mathcal{I}\left(\psi_{j_1}\right)_o=\left(\cup_{j=1}^{\infty} \mathcal{I}\left(\psi_j\right)\right)_o.$$ Then there exists a germ of an analytic curve $(\gamma, o)$ such that $$\left.\frac{\widetilde{g o \gamma}}{F o \gamma}\right|_o=0$$ holds for any germ $(g, o)$ of $\mathcal{I}\left(\psi_{j_1}\right)_o$, where $\frac{\widetilde{g \circ \gamma}}{F \circ \gamma}$ is the holomorphic extension of $\frac{g \circ \gamma}{F \circ \gamma}$ from $\gamma \backslash o$ to $\gamma$.} and equality \ref{eq:3.5}, it follows that there exists a germ of an analytic curve $\gamma$ through $o$ satisfying $\left\{\left.F\right|_\gamma=0\right\} \subseteq\{o\}$ such that for any germ of holomorphic function $g$ in $\mathcal{I}_{+}(\varphi)_o$, there exists a holomorphic function $h_g$ on $\gamma$ satisfying
+\begin{equation}\label{eq:3.6}
+    h_g(o)=0 \quad \text { and }\left.\quad g\right|_\gamma=\left.F\right|_\gamma h_g .
+\end{equation}
+
+This plays a similar role with the assertion in the proof for dimension $1$.
+
+Using the local parametrization of $\gamma$ (see [5]), without loss of generality, one may assume that $\gamma$ and $\Delta^{\prime} \times \Delta^{\prime \prime}$ are as in Section 2.1.
+
+By inequality \eqref{eq:3.4}, it follows that there exist hyperplanes $H_j:=H_{a_j}=$ $\left\{z^{\prime}=a_j\right\}$ that satisfy $a_j \rightarrow 0(j \rightarrow \infty)$ and
+
+\begin{equation}\label{eq:convergence}
+    \int_{H_j}|F|^2 e^{-\varphi} d \lambda_{n-1}=o\left(\frac{1}{\left|a_j\right|^2}\right) .
+\end{equation}
+
+
+According to \textit{the induction assumption} and \textit{the Lebesgue dominated convergence theorem}, it follows that for any given $j$, there exists a small enough $p_j>1$ such that\sidenote{It may be the reason that from the truth of one case in \eqref{eq:3.1}, we can obtain that when $a_j\to 0$, we have \eqref{eq:convergence}, thus for any given $j$, by dominated convergence theorem, \eqref{eq:3.7} is true.}
+\begin{equation}\label{eq:3.7}
+    \int_{H_j}|F|^2 e^{-p_j \varphi} d \lambda_{n-1} \leq 2 \int_{H_j}|F|^2 e^{-\varphi} d \lambda_{n-1}=o\left(\frac{1}{\left|a_j\right|^2}\right) .
+\end{equation}
+
+Using movably (respect to $j \rightarrow \infty$ ) \textit{the Ohsawa-Takegoshi $L^2$ extension theorem} on $\Delta^{\prime} \times \Delta^{\prime \prime}$, we obtain a holomorphic function $F_j:=F_{a_j}$ on $\Delta^{\prime} \times \Delta^{\prime \prime}$ for each $j$ such that $\left.F_j\right|_{H_j}=\left.F\right|_{H_j}$, and
+$$
+\int_{\Delta^{\prime} \times \Delta^{\prime \prime}}\left|F_j\right|^2 e^{-p_j \varphi} d \lambda_n \leq \mathbf{C} \int_{H_j}|F|^2 e^{-p_j \varphi} d \lambda_{n-1},
+$$
+where $\mathbf{C}$ is a universal constant.
+By inequality \eqref{eq:3.7} and negativeness of $\varphi$, it follows that
+\begin{equation}\label{eq:3.8}
+    \int_{\Delta^{\prime} \times \Delta^{\prime \prime}}\left|F_j\right|^2 d \lambda_n=o\left(\frac{1}{\left|a_j\right|^2}\right)
+\end{equation}
+
+Note that $\left.F_j\right|_{H_j}=\left.F\right|_{H_j}$ and $\left(F_j, o\right) \in \mathcal{I}_{+}(\varphi)_o$ but $(F, o) \notin \mathcal{I}_{+}(\varphi)_o$. According to equality \eqref{eq:3.6} and Lemma 2.2\sidenote{Let $F$ be a holomorphic function on $\Delta^{\prime} \times \Delta^{\prime \prime}$ satisfying $\left.F\right|_\gamma \not \equiv 0$. Denote by hyperplane $H_a:=\left\{z^{\prime}=a\right\}$ near o. Let $F_a$ be the holomorphic extension of $\left.F\right|_{H_a}$ on $\Delta^{\prime} \times \Delta^{\prime \prime}$ such that there exists a holomorphic function $h_a$ on $\gamma$ satisfying
+\begin{enumerate}[label=(\arabic*)]
+    \item $\left.F_a\right|_\gamma=\left.F\right|_\gamma h_a$,
+    \item $h_a(o)=0$.
+\end{enumerate}
+Then we have
+$$
+\int_{\Delta^{\prime} \times \Delta^{\prime \prime}}\left|F_a\right|^2 d \lambda_n \geq \frac{C_2}{|a|^2}
+$$
+where $C_2$ is a positive constant independent of $a, H_a$ and $F_a$.}, it follows that
+$$
+\int_{\Delta^{\prime} \times \Delta^{\prime \prime}}\left|F_j\right|^2 d \lambda_n \geq \frac{C_2}{\left|a_j\right|^2}
+$$
+where $C_2>0$ is independent of $j$, which contradicts equality \eqref{eq:3.8}.
+We have thus proved Theorem \ref{thm:1.1} for $n$. The proof of Theorem \ref{thm:1.1} is now complete.
+
+
+\end{proof}
+
+
+% \begin{figure}[!htpb]
+%     \centering
+%     \subfigure[0.25\textwidth][fig2test\label{fig1}]{
+%     \includegraphics[width=.45\textwidth]{example-image}}
+%     \hspace{.5cm} % Adjust the space as needed
+%     \subfigure[0.25\textwidth][fig2test\label{fig2}]{
+%     \includegraphics[width=.45\textwidth]{example-image}}
+%     \caption{fig}
+%     \label{fig}
+%     \end{figure}
+
+%     \ref{fig} big; small1 \ref{fig1} and small2 \ref{fig2}
+\section{Some topics may be benifit for the future research}
+\subsection{Multiplier ideal sheaf \texorpdfstring{$\mJ(\varphi)$}{}}
+\begin{definition}[Multiplier ideal sheaf]\label{defi:MIF}
+    Multiplier ideal sheaf $\mJ(\varphi)$ is considered as the subsheaf of germs of holomorphic functions $f$  such that $\abs{f}^2 e^{-2\varphi}$ is locally integrable (/summable).
+
+    It is worth to point out that it is a \emph{coherent algebraic sheaf} over $X$ and satisfies
+    \[H^q(X,K_X\otimes L\otimes \mJ(\varphi))=0\]
+    for all $q\geq 1$ if the curvature of $L$ is positive in the sense of current.
+\end{definition}
+
+The two efficient ways to solve the singularities are \emph{Multiplier ideal sheaf} by Nadel (Which can be seen as a generalization of Kawamata-Viehweg's vanishing theorem.) and \emph{The theory of positive currents} by Lelong. Currents can be seen as generalization of \textbf{algebraic cycles}.
+
+\subsection{Plurisubharmonic functions}
+\begin{definition}[Plurisubharmonic functions]\label{def:psh functions}
+    A function $u: \Omega \longrightarrow\left[-\infty,+\infty\left[\right.\right.$ defined on an open subset $\Omega \subset \mathbb{C}^n$ is said to be plurisubharmonic (psh for short) if
+    \begin{enumerate}[label=(\alph*)]
+        \item $u$ is upper semicontinuous;
+        \item for every complex line $L \subset \mathbb{C}^n$, $u_{\uparrow \Omega \cap L}$ is subharmonic on $\Omega \cap L$, that is, for all $a \in \Omega$ and $\xi \in \mathbb{C}^n$ with $|\xi|<d(a, \complement \Omega)$, the function $u$ satisfies the mean value inequality\sidenote{A vital characteristic, which is equivalent to the integrability of the inegral.}
+$$
+u(a) \leqslant \frac{1}{2 \pi} \int_0^{2 \pi} u\left(a+e^{\mathrm{i} \theta} \xi\right) d \theta.
+$$
+    \end{enumerate}
+The set of psh functions on $\Omega$ is denoted by $\operatorname{Psh}(\Omega)$.
+\end{definition}
+
+\begin{theorem}[]\label{thm:psh-criterion}
+    A function $u\in C^2(\Omega,\bR)$ is psh if and only if the hermitian form
+    \begin{equation*}
+        Hu(a)(\xi)=\sum_{1\leqslant j,k\leqslant n}\frac{\bd^2 u}{\bd z_j\bd\bar z_k(a)} \xi_j\bar\xi_k
+    \end{equation*}
+    is semi-positive at every point $a\in \Omega$.
+\end{theorem}
+
+\subsection{Positive Currents}
+A current of degree $q$ on an oriented differentiable manifold $M$ is simply a differential $q$-form $\Theta$ with distribution coefficients. The space of currents of degree $q$ over $M$ will be denoted by $\mathscr{D}^{\prime q}(M)$. Alternatively, a current of degree $q$ can be seen as an element $\Theta$ in the dual space $\mathscr{D}_p^{\prime}(M):=\left(\mathscr{D}^p(M)\right)^{\prime}$ of the space $\mathscr{D}^p(M)$ of smooth differential forms of degree $p=\operatorname{dim} M-q$ with compact support; the duality pairing is given by
+\begin{equation}\label{eq:2.1}
+    \langle\Theta, \alpha\rangle=\int_M \Theta \wedge \alpha, \quad \alpha \in \mathscr{D}^p(M) .
+\end{equation}
+A basic example is the current of integration $[S]$ over a compact oriented submanifold $S$ of $M$ :
+\begin{equation}\label{eq:2.2}
+    \langle[S], \alpha\rangle=\int_S \alpha, \quad \operatorname{deg} \alpha=p=\operatorname{dim}_{\mathbb{R}} S
+\end{equation}
+Then $[S]$ is a current with measure coefficients, and Stokes' formula shows that $d[S]=$ $(-1)^{q-1}[\partial S]$, in particular $d[S]=0$ if $S$ has no boundary. Because of this example, the integer $p$ is said to be the dimension of $\Theta$ when $\Theta \in \mathscr{D}_p^{\prime}(M)$. The current $\Theta$ is said to be closed if $d \Theta=0$.
+
+% \softclearmargin
+On a complex manifold $X$, we have similar notions of bidegree and bidimension; as in the real case, we denote by
+\begin{equation}\label{eq:2.3}
+    \mathscr{D}^{\prime p, q}(X)=\mathscr{D}_{n-p, n-q}^{\prime}(X), \quad n=\operatorname{dim} X,
+\end{equation}
+the space of currents of bidegree $(p, q)$ and bidimension $(n-p, n-q)$ on $X$. According to \cite{lelong1957integration}\marginpar{\small \cite{lelong1957integration} \fullcite{lelong1957integration}}, a current $\Theta$ of bidimension ( $p, p$ ) is said to be (weakly) positive if for every choice of smooth ( 1,0 )-forms $\alpha_1, \ldots, \alpha_p$ on $X$ the distribution
+$$\Theta \wedge (\mathrm{i} \alpha_1 \wedge \bar{\alpha}_1) \wedge \ldots \wedge (\mathrm{i} \alpha_p \wedge \bar{\alpha}_p) $$ is a positive measure.
+
+\section{Perverse Sheaf and Intersection Cohomology}
+
+\begin{itemize}
+    \item test
+    \begin{itemize}
+        \item testing
+        \begin{itemize}
+            \item tested
+        \end{itemize}
+        \item testii
+    \end{itemize}
+    \item test2
+    \item test3
+\end{itemize}
+
+\begin{enumerate}
+    \item test
+    \begin{enumerate}
+        \item testing
+        \begin{enumerate}
+            \item tested
+        \end{enumerate}
+        \item testii
+    \end{enumerate}
+    \item test2
+    \item test3
+\end{enumerate}
+
+\chapter{test}
+\section{test1}
+\section{test2}
+\chapter*{test}
+
+
+\chapter*{Test the long title}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newgeometry{left=2cm,right=2cm,bottom=2cm,top=3cm}
+%
+\printbibliography[heading=bibintoc]
+ %
+\end{document}

@@ -1,0 +1,197 @@
+\indexentry{集合@\textbf  {集合}(set)}{3}
+\indexentry{元素@\textbf  {元素}(element)}{3}
+\indexentry{点@\textbf  {点}(point)}{3}
+\indexentry{单点集@\textbf  {单点集}(singleton)}{4}
+\indexentry{子集@\textbf  {子集}(subset)}{4}
+\indexentry{真子集@\textbf  {真子集}(proper subset)}{4}
+\indexentry{空集@\textbf  {空集}(empty set)}{4}
+\indexentry{幂集@\textbf  {幂集}(power set)}{4}
+\indexentry{并集@\textbf  {并集}(union)}{4}
+\indexentry{交集@\textbf  {交集}(intersection)}{4}
+\indexentry{全集@\textbf  {全集}(universal set)}{5}
+\indexentry{序对@\textbf  {序对}(ordered pair)}{5}
+\indexentry{关系@\textbf  {关系}(relation)}{6}
+\indexentry{等价关系@\textbf  {等价关系}(equivalence relation)}{6}
+\indexentry{等价类@\textbf  {等价类}(equivalence class)}{6}
+\indexentry{代表元@\textbf  {代表元}(representative)}{6}
+\indexentry{底集@\textbf  {底集}(underlying set)}{7}
+\indexentry{底空间@\textbf  {底空间}(underlying space)}{7}
+\indexentry{等同@\textbf  {等同}(identification)}{7}
+\indexentry{映射@\textbf  {映射}(map)}{9}
+\indexentry{像@\textbf  {像}(image)}{9}
+\indexentry{定义域@\textbf  {定义域}(domain)}{9}
+\indexentry{陪域@\textbf  {陪域}(codomain)}{9}
+\indexentry{到达域@\textbf  {到达域}(target space)}{9}
+\indexentry{函数@\textbf  {函数}(function)}{9}
+\indexentry{恒等映射@\textbf  {恒等映射}(identity map)}{9}
+\indexentry{图象@\textbf  {图象}(graph)}{9}
+\indexentry{像集@\textbf  {像集}(image)}{10}
+\indexentry{原像集@\textbf  {原像集}(preimage)}{10}
+\indexentry{逆像集@\textbf  {逆像集}(inverse image)}{10}
+\indexentry{值域@\textbf  {值域}(range)}{10}
+\indexentry{复合映射@\textbf  {复合映射}(composition mapping)}{10}
+\indexentry{复合运算@\textbf  {复合运算}(composition)}{10}
+\indexentry{单射@\textbf  {单射}(injection)}{10}
+\indexentry{单的@\textbf  {单的}(injective)}{10}
+\indexentry{满射@\textbf  {满射}(surjection)}{10}
+\indexentry{满的@\textbf  {满的}(surjective)}{10}
+\indexentry{映满的@\textbf  {映满的}(onto)}{10}
+\indexentry{双射@\textbf  {双射}(injection)}{10}
+\indexentry{既单且满@\textbf  {既单且满}(bijective)}{10}
+\indexentry{一一对应@\textbf  {一一对应}(one-to-one correspondence)}{10}
+\indexentry{逆映射@\textbf  {逆映射}(inverse)}{11}
+\indexentry{投影映射@\textbf  {投影映射}(projection)}{11}
+\indexentry{单位圆@\textbf  {单位圆}(unit circle)}{12}
+\indexentry{二元运算@\textbf  {二元运算}(binary operation)}{12}
+\indexentry{度量空间@\textbf  {度量空间}(metric space)}{13}
+\indexentry{序列@\textbf  {序列}(sequence)}{14}
+\indexentry{收敛到@\textbf  {收敛到}(converge to)}{14}
+\indexentry{Cauchy 列@\textbf  {Cauchy 列}(Cauchy sequence)}{15}
+\indexentry{完备度量空间@\textbf  {完备度量空间}(complete metric space)}{15}
+\indexentry{可数无穷的@\textbf  {可数无穷的}(countably infinite)}{17}
+\indexentry{不可数的@\textbf  {不可数的}(uncountable)}{17}
+\indexentry{Cantor 集@\textbf  {Cantor 集}(Cantor set)}{18}
+\indexentry{数学归纳法@\textbf  {数学归纳法}(mathematical induction)}{19}
+\indexentry{二项式定理@\textbf  {二项式定理}(binomial theorem)}{19}
+\indexentry{归纳定义@\textbf  {归纳定义}(inductive definition)}{20}
+\indexentry{Derscates 矢量@\textbf  {Derscates 矢量}(Cartesian vector)}{27}
+\indexentry{矢量空间@\textbf  {矢量空间}(vector space)}{27}
+\indexentry{和@\textbf  {和}(sum)}{27}
+\indexentry{零矢量@\textbf  {零矢量}(zero vector, 或者 null vector)}{27}
+\indexentry{复矢量空间@\textbf  {复矢量空间}(complex vector space)}{28}
+\indexentry{实矢量空间@\textbf  {实矢量空间}(real vector space)}{28}
+\indexentry{域@\textbf  {域}(field)}{28}
+\indexentry{加法单位元@\textbf  {加法单位元}(additive identity)}{28}
+\indexentry{乘法单位元@\textbf  {乘法单位元}(multiplicative identity)}{28}
+\indexentry{线性无关@\textbf  {线性无关}(linear independent)}{30}
+\indexentry{线性相关@\textbf  {线性相关}(linear dependent)}{30}
+\indexentry{线性组合@\textbf  {线性组合}(linear combination)}{30}
+\indexentry{张成子空间@\textbf  {张成子空间}(span)}{31}
+\indexentry{基@\textbf  {基}(basis, 也称作\textbf  {基底})}{31}
+\indexentry{维数@\textbf  {维数}(dimension)}{31}
+\indexentry{分量@\textbf  {分量}(components)}{31}
+\indexentry{标准基@\textbf  {标准基}(standard basis)}{32}
+\indexentry{直和@\textbf  {直和}(direct sum)}{35}
+\indexentry{直积@\textbf  {直积}(direct product)}{38}
+\indexentry{张量积@\textbf  {张量积}(tensor product)}{39}
+\indexentry{双线性@\textbf  {双线性}(bilinear)}{40}
+\indexentry{内积@\textbf  {内积}(inner product)}{41}
+\indexentry{半双线性的@\textbf  {半双线性的}(sesquilinear)}{41}
+\indexentry{内积空间@\textbf  {内积空间}(inner product space)}{42}
+\indexentry{权函数@\textbf  {权函数}(weight function)}{42}
+\indexentry{标准内积@\textbf  {标准内积}(standard inner product)}{43}
+\indexentry{正交@\textbf  {正交}(orthogonal)}{44}
+\indexentry{规范矢量@\textbf  {规范矢量}(normal vector)}{44}
+\indexentry{归一化矢量@\textbf  {归一化矢量}(normalized vector)}{44}
+\indexentry{范数@\textbf  {范数}(norm)}{50}
+\indexentry{三角不等式@\textbf  {三角不等式}(triangle inequality)}{50}
+\indexentry{范数@\textbf  {范数}(norm)}{50}
+\indexentry{赋范线性空间@\textbf  {赋范线性空间}(normed linear space)}{50}
+\indexentry{平行四边形法则@\textbf  {平行四边形法则}(parallelogram law)}{50}
+\indexentry{极化恒等式@\textbf  {极化恒等式}(polarization identity)}{51}
+\indexentry{线性映射@\textbf  {线性映射}(linear map)}{54}
+\indexentry{线性变换@\textbf  {线性变换}(linear transformation)}{54}
+\indexentry{自同态@\textbf  {自同态}(endomorphism)}{54}
+\indexentry{线性算符@\textbf  {线性算符}(linear operator)}{54}
+\indexentry{等距映射@\textbf  {等距映射}(isometric map)}{54}
+\indexentry{线性等距@\textbf  {线性等距}(linear isometry)}{54}
+\indexentry{导数算符@\textbf  {导数算符}(derivative operator)}{55}
+\indexentry{积分算符@\textbf  {积分算符}(integraion operator)}{55}
+\indexentry{核@\textbf  {核}(kernal)}{57}
+\indexentry{零空间@\textbf  {零空间}(null space)}{57}
+\indexentry{零化度@\textbf  {零化度}(nullity)}{57}
+\indexentry{秩@\textbf  {秩}(rank)}{57}
+\indexentry{维数定理@\textbf  {维数定理}(dimension theorem)}{58}
+\indexentry{秩-零化度定理@\textbf  {秩-零化度定理}(rank-nullity theorem)}{58}
+\indexentry{线性同构@\textbf  {线性同构}(linear isomorphism)}{60}
+\indexentry{同构@\textbf  {同构}(isomorphic)}{60}
+\indexentry{同构映射@\textbf  {同构映射}(isomorphism, 也简称为同构)}{60}
+\indexentry{自同构@\textbf  {自同构}(automorphism)}{60}
+\indexentry{可逆@\textbf  {可逆}(invertible)}{60}
+\indexentry{双线性内积@\textbf  {双线性内积}(bilinear inner product)}{64}
+\indexentry{伴随算符@\textbf  {伴随算符}(adjoint operator)}{65}
+\indexentry{自伴的@\textbf  {自伴的}(self-adjoint)}{65}
+\indexentry{斜的@\textbf  {斜的}(skew)}{65}
+\indexentry{复结构@\textbf  {复结构}(complex structure)}{66}
+\indexentry{复化@\textbf  {复化}(complexification)}{67}
+\indexentry{线性泛函@\textbf  {线性泛函}(linear functional)}{69}
+\indexentry{对偶空间@\textbf  {对偶空间}(dual space)}{69}
+\indexentry{对偶基@\textbf  {对偶基}(dual basis)}{71}
+\indexentry{零化子@\textbf  {零化子}(annihilator)}{71}
+\indexentry{对偶@\textbf  {对偶}(dual)}{71}
+\indexentry{$p$ 线性映射@\textbf  {$p$ 线性映射}(p-linear map)}{75}
+\indexentry{$p$ 线性函数@\textbf  {$p$ 线性函数}(p-linear function)}{75}
+\indexentry{斜对称的@\textbf  {斜对称的}(skew-symmetric)}{75}
+\indexentry{行列式函数@\textbf  {行列式函数}(determinant function)}{77}
+\indexentry{行列式@\textbf  {行列式}(determinant)}{79}
+\indexentry{古典伴随@\textbf  {古典伴随}(classical adjoint)}{80}
+\indexentry{代数@\textbf  {代数}(algebra)}{87}
+\indexentry{乘法@\textbf  {乘法}(multiplication)}{87}
+\indexentry{结合代数@\textbf  {结合代数}(associative algebra)}{87}
+\indexentry{交换代数@\textbf  {交换代数}(commutative algebra)}{87}
+\indexentry{带单位元的代数@\textbf  {带单位元的代数}(algebra with identity)}{87}
+\indexentry{左逆@\textbf  {左逆}(left inverse)}{87}
+\indexentry{右逆@\textbf  {右逆}(right inverse)}{87}
+\indexentry{幺元@\textbf  {幺元}(unit)}{87}
+\indexentry{含幺代数@\textbf  {含幺代数}(unital algebra)}{87}
+\indexentry{子代数@\textbf  {子代数}(subalgebra)}{88}
+\indexentry{中心@\textbf  {中心}(center)}{89}
+\indexentry{中心代数@\textbf  {中心代数}(central algebra)}{89}
+\indexentry{导出代数@\textbf  {导出代数}(derived algebra)}{90}
+\indexentry{矩阵代数@\textbf  {矩阵代数}(matrix algebra)}{90}
+\indexentry{代数的直和@\textbf  {代数的直和}(algebra direct sum)}{91}
+\indexentry{代数的张量积@\textbf  {代数的张量积}(algebra tensor product)}{92}
+\indexentry{结构常数@\textbf  {结构常数}(structure constants)}{92}
+\indexentry{可除代数@\textbf  {可除代数}(division algebra)}{93}
+\indexentry{四元数代数@\textbf  {四元数代数}(algebra of quaternions)}{93}
+\indexentry{实部@\textbf  {实部}(real part)}{94}
+\indexentry{纯部@\textbf  {纯部}(pure part)}{94}
+\indexentry{共轭@\textbf  {共轭}(conjugate)}{94}
+\indexentry{绝对值@\textbf  {绝对值}(absolute value)}{94}
+\indexentry{生成元@\textbf  {生成元}(generator)}{95}
+\indexentry{代数同态@\textbf  {代数同态}(algebra homomorphism)}{96}
+\indexentry{单同态@\textbf  {单同态}(monomorphism)}{96}
+\indexentry{满同态@\textbf  {满同态}(epimorphism)}{96}
+\indexentry{同构@\textbf  {同构}(isomorphism)}{96}
+\indexentry{自同构@\textbf  {自同构}(automorphism)}{96}
+\indexentry{幺同态@\textbf  {幺同态}(unital homomorphism)}{97}
+\indexentry{对合@\textbf  {对合}(involution)}{97}
+\indexentry{左理想@\textbf  {左理想}(left ideal)}{99}
+\indexentry{右理想@\textbf  {右理想}(right ideal)}{99}
+\indexentry{双边理想@\textbf  {双边理想}(two-sided ideal)}{99}
+\indexentry{理想@\textbf  {理想}(ideal)}{99}
+\indexentry{可约@\textbf  {可约}(reducible)}{101}
+\indexentry{单(纯)代数@\textbf  {单(纯)代数}(simple algebra)}{103}
+\indexentry{平凡理想@\textbf  {平凡理想}(trivial ideal)}{103}
+\indexentry{平凡同态@\textbf  {平凡同态}(trivial homomorphism)}{103}
+\indexentry{商代数@\textbf  {商代数}(quotient algebra/factor algebra)}{104}
+\indexentry{全矩阵代数@\textbf  {全矩阵代数}(total matrix algebra)}{105}
+\indexentry{导子@\textbf  {导子}(derivation)}{107}
+\indexentry{Leibniz 公式@\textbf  {Leibniz 公式}(Leibniz formula)}{108}
+\indexentry{导子代数@\textbf  {导子代数}(derivation algebra)}{109}
+\indexentry{$\phi $ 导子@\textbf  {$\phi $ 导子}($\phi $-derivation)}{109}
+\indexentry{反导子@\textbf  {反导子}(antiderivation)}{109}
+\indexentry{幂零元@\textbf  {幂零元}(nilpotent)}{111}
+\indexentry{幂零指数@\textbf  {幂零指数}(index)}{111}
+\indexentry{零化的@\textbf  {零化的}(nil)}{111}
+\indexentry{幂等元@\textbf  {幂等元}(idempotent)}{111}
+\indexentry{根@\textbf  {根}(radical, 亦译作根基)}{114}
+\indexentry{Peirce 分解@\textbf  {Peirce 分解}(Peirce decomposition)}{115}
+\indexentry{主幂等元@\textbf  {主幂等元}(principle idempotent)}{116}
+\indexentry{本原幂等元@\textbf  {本原幂等元}(primitive idempotent)}{116}
+\indexentry{半单@\textbf  {半单}(semi-simple)}{118}
+\indexentry{Wedderburn 主结构定理@\textbf  {Wedderburn 主结构定理}(Wedderburn principle structure theorem)}{122}
+\indexentry{Frobenius 定理@\textbf  {Frobenius 定理}(Frobenius theorem)}{123}
+\indexentry{秩@\textbf  {秩}(rank)}{123}
+\indexentry{多项式代数@\textbf  {多项式代数}(polynomial algebra)}{125}
+\indexentry{首项@\textbf  {首项}(leading term)}{125}
+\indexentry{首项系数@\textbf  {首项系数}(leading coefficient)}{125}
+\indexentry{次数@\textbf  {次数}(degree)}{125}
+\indexentry{标量项@\textbf  {标量项}(scalar term)}{125}
+\indexentry{首一多项式@\textbf  {首一多项式}(monic polynomial)}{125}
+\indexentry{单项式@\textbf  {单项式}(monomial)}{125}
+\indexentry{微分映射@\textbf  {微分映射}(differentiation map)}{125}
+\indexentry{链式法则@\textbf  {链式法则}(chain rule)}{126}
+\indexentry{$r$ 阶导数@\textbf  {$r$ 阶导数}($r$th derivative)}{126}
+\indexentry{Taylor 公式@\textbf  {Taylor 公式}(Taylor formula)}{126}
+\indexentry{重数@\textbf  {重数}(multiplicity)}{127}
